@@ -1,0 +1,18 @@
+---
+import '../styles/global.css';
+
+const { title = "Ηλίας Γ. Κοντογιώργας | Φυσικοθεραπεία - Ανδραβίδα" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content="Φυσικοθεραπετήριο Ηλίας Γ. Κοντογιώργας στην Ανδραβίδα. Εξειδικευμένη Μυοσκελετική Αποκατάσταση & Θεραπεία." />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

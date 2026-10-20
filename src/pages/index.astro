@@ -1,16 +1,197 @@
 ---
+import Layout from '../layouts/Layout.astro';
+
+const doctorName = "Ηλίας Γ. Κοντογιώργας";
+const profession = "Φυσικοθεραπευτής";
+const specialty = "Μυοσκελετική Αποκατάσταση";
+const phoneLandline = "2623054174";
+const phoneMobile = "6908200716";
+const address = "Εθνικής Αντιστάσεως, Ανδραβίδα 270 51, Ηλεία";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={`${doctorName} | Φυσικοθεραπεία - Ανδραβίδα`}>
+
+  <!-- 1. Header / Navbar -->
+  <header class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="bg-cyan-600 text-white p-2.5 rounded-2xl text-xl font-bold">
+          🩺
+        </div>
+        <div>
+          <span class="block font-black text-slate-900 text-lg leading-tight">{doctorName}</span>
+          <span class="block text-xs text-cyan-700 font-semibold uppercase tracking-wider">{specialty}</span>
+        </div>
+      </a>
+
+      <!-- Quick Call Button Desktop -->
+      <a 
+        href={`tel:${phoneMobile}`} 
+        class="hidden sm:flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white font-bold px-5 py-2.5 rounded-2xl transition shadow-sm hover:shadow"
+      >
+        <span>📞</span>
+        <span>{phoneMobile}</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section class="bg-gradient-to-b from-slate-50 via-cyan-50/40 to-white py-16 md:py-24 px-4 text-center border-b border-slate-100">
+    <div class="max-w-3xl mx-auto">
+      <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-4">
+        Φυσικοθεραπευτηριο Ανδραβιδα
+      </span>
+      <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+        Εξειδικευμένη Μυοσκελετική Αποκατάσταση & Ανακούφιση από τον Πόνο
+      </h1>
+      <p class="text-slate-600 text-base md:text-lg mb-8 leading-relaxed">
+        Σύγχρονες μέθοδοι φυσικοθεραπείας για την αντιμετώπιση μυοσκελετικών παθήσεων, αθλητικών τραυματισμών και χρόνιου πόνου με εξατομικευμένα θεραπευτικά πρωτόκολλα.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a 
+          href={`tel:${phoneMobile}`} 
+          class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold px-8 py-4 rounded-2xl text-lg transition shadow-lg hover:shadow-xl hover:scale-[1.02] transform flex items-center justify-center gap-2"
+        >
+          📱 Κλείστε Ραντεβού: {phoneMobile}
+        </a>
+        <a 
+          href="#location" 
+          class="bg-white text-slate-700 hover:text-cyan-700 font-bold px-8 py-4 rounded-2xl text-lg border border-slate-200 transition shadow-sm hover:bg-slate-50 flex items-center justify-center gap-2"
+        >
+          📍 Τοποθεσία & Χάρτης
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Υπηρεσίες -->
+  <section class="py-16 px-4 max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-4xl font-extrabold text-slate-900">Υπηρεσίες Αποκατάστασης</h2>
+      <p class="text-slate-500 mt-2">Εξατομικευμένη φροντίδα προσαρμοσμένη στις ανάγκες κάθε ασθενούς</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+        <div class="text-4xl mb-4">🦴</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Μυοσκελετική Αποκατάσταση</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Αντιμετώπιση παθήσεων σπονδυλικής στήλης (αυχενικό, οσφυαλγία, ισχιαλγία) και αρθρώσεων.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+        <div class="text-4xl mb-4">⚽</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Αθλητικές Κακώσεις</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Αποκατάσταση θλάσεων, διαστρεμμάτων και μετεγχειρητική αποκατάσταση αθλητών για γρήγορη επανένταξη.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+        <div class="text-4xl mb-4">🖐️</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Manual Therapy & Θεραπεία</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Εξειδικευμένες τεχνικές κινητοποίησης (Manual Therapy) και θεραπευτική άσκηση για μακροπρόθεσμα αποτελέσματα.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Τοποθεσία & Επικοινωνία -->
+  <section id="location" class="py-16 bg-slate-50 border-t border-slate-200 px-4">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          Επικοινωνια & Ραντεβου
+        </span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-3">
+          Πού Βρίσκεται το Φυσικοθεραπευτήριο
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+          
+          <div class="flex items-start gap-4">
+            <div class="bg-cyan-600 text-white p-3 rounded-2xl text-xl shrink-0">📍</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-lg">Διεύθυνση</h4>
+              <p class="text-slate-600 text-sm mt-1 leading-relaxed">{address}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-amber-400 text-slate-900 p-3 rounded-2xl text-xl shrink-0">📞</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-lg">Τηλέφωνα Επικοινωνίας</h4>
+              <p class="text-slate-600 text-sm mt-1 space-y-1">
+                <a href={`tel:${phoneMobile}`} class="hover:text-cyan-600 font-bold block text-base">📱 Κινητό: {phoneMobile}</a>
+                <a href={`tel:${phoneLandline}`} class="hover:text-cyan-600 font-medium block">☎️ Σταθερό: {phoneLandline}</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-cyan-100 text-cyan-800 p-3 rounded-2xl text-xl shrink-0">🕒</div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-lg">Ωράριο Κατόπιν Ραντεβού</h4>
+              <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                Δευτέρα - Παρασκευή: Πρωί & Απόγευμα<br />
+                *(Δεχόμαστε κατόπιν τηλεφωνικού ραντεβού)*
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Κοντογιωργας+Ηλιας+Φυσικοθεραπεια+Ανδραβιδα" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 transition shadow-md"
+            >
+              🧭 Οδηγίες Πλοήγησης (Google Maps)
+            </a>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-2 h-[420px] rounded-3xl overflow-hidden border border-slate-200 shadow-sm relative">
+          <iframe 
+            class="w-full h-full border-0"
+            src="https://maps.google.com/maps?q=Κοντογιωργας+Ηλιας+Φυσικοθεραπεια,+Εθνικης+Αντιστασεως,+Ανδραβιδα&t=&z=16&ie=UTF8&iwloc=B&output=embed" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Floating Call Button (Mobile) -->
+  <div class="fixed bottom-5 right-5 z-40 sm:hidden">
+    <a 
+      href={`tel:${phoneMobile}`} 
+      aria-label="Άμεση κλήση"
+      class="bg-cyan-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center text-2xl border-2 border-white active:scale-90 transition transform"
+    >
+      📞
+    </a>
+  </div>
+
+  <!-- 6. Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-center text-sm">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="font-semibold text-slate-200 mb-1">{doctorName} — {profession}</p>
+      <p class="text-xs text-slate-500">{address} | Τηλ: {phoneMobile} - {phoneLandline}</p>
+      <p class="text-xs text-slate-600 mt-4">© {new Date().getFullYear()} All rights reserved.</p>
+    </div>
+  </footer>
+
+</Layout>
